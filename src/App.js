@@ -3,26 +3,34 @@ import logo from './logo.svg';
 import './App.css';
 import LineupInput from './LineupInput';
 import LineupCard from './LineupCard';
-import shortid from 'shortid'
 
-  const startingLineup = [
-    {
-      "id": shortid.generate(),
-      "name": "Peter Tountas",
-      "position": "shortstop"
-    },
-    {
-      "id": shortid.generate(),
-      "name": "Jose Altuve",
-      "position": "second base"
-    },{
-      "id": shortid.generate(),
-      "name": "Bryce Harper",
-      "position": "Right Field"
-    }
-  ]
 
 class App extends Component {
+  state = {
+    startingLineup :[
+      {
+        "id":"petertountas",
+        "name": "Peter Tountas",
+        "position": "shortstop"
+      },
+      {
+        "id": "josealtuve",
+        "name": "Jose Altuve",
+        "position": "second base"
+      },{
+        "id": "bryceharper",
+        "name": "Bryce Harper",
+        "position": "Right Field"
+      }
+    ]
+  }
+
+  removePlayer = (player) => {
+    this.setState((state) => ({
+      startingLineup: state.startingLineup.filter((p) => p.id !== player.id )
+    }))
+  }
+
 
   render() {
     return (
@@ -31,11 +39,14 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">React Lineup Card</h1>
         </header>
-        <LineupCard starters={startingLineup} />
+        <LineupCard onDeletePlayer={this.removePlayer} starters={this.state.startingLineup} />
         <LineupInput  />
       </div>
     );
   }
 }
+
+
+
 
 export default App;
