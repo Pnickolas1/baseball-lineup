@@ -12,7 +12,7 @@ class App extends Component {
 
   removePlayer = (player) => {
     this.setState((state) => ({
-      startingLineup: state.startingLineup.filter((p) => p.id !== player.id )
+      startingLineup: state.startingLineup.filter((p) => p.number !== player.number )
     }))
   }
 
