@@ -22,10 +22,10 @@ class LineupInput extends Component{
       <div className="input-Container">
         <form id="create-player-form" onSubmit={this.handleSubmit} className="create-player-form">
             <div className="inputFields">
-              <input placeholder="number" name="number" types="number" />
-              <input placeholder="name" name="name" type="text"/>
-              <input placeholder="position" name="position" type="text" />
-              <Button bsStyle="primary" type="submit">Submit</Button>
+              <input className="input-fields" placeholder="number" name="number" types="number" />
+              <input className="input-fields" placeholder="name" name="name" type="text"/>
+              <input className="input-fields" placeholder="position" name="position" type="text" />
+              <Button bsStyle="primary" type="submit">Add Player</Button>
             </div>
         </form>  
       </div>

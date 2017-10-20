@@ -10,7 +10,7 @@ class LineupCard extends Component{
 
     return(
       <div>
-        <Panel bsStyle="primary" header="Lineup Card">
+        <Panel bsStyle="primary" header="Starting Lineup">
           <ol className="starting-player">
             {this.props.starters.map((player) => (
               <li key={player.number} className="player-list-item">
