@@ -7,22 +7,7 @@ import LineupCard from './LineupCard';
 
 class App extends Component {
   state = {
-    startingLineup :[
-      {
-        "id":"petertountas",
-        "name": "Peter Tountas",
-        "position": "shortstop"
-      },
-      {
-        "id": "josealtuve",
-        "name": "Jose Altuve",
-        "position": "second base"
-      },{
-        "id": "bryceharper",
-        "name": "Bryce Harper",
-        "position": "Right Field"
-      }
-    ]
+    startingLineup :[]
   }
 
   removePlayer = (player) => {
@@ -31,6 +16,11 @@ class App extends Component {
     }))
   }
 
+  createPlayer(player){
+    this.setState(state => ({
+      startingLineup: state.startingLineup.concat([player])
+    }))
+  }
 
   render() {
     return (
@@ -40,7 +30,10 @@ class App extends Component {
           <h1 className="App-title">React Lineup Card</h1>
         </header>
         <LineupCard onDeletePlayer={this.removePlayer} starters={this.state.startingLineup} />
-        <LineupInput  />
+        <LineupInput onPlayerCreate={(player) => {
+          this.createPlayer(player)
+          }}  
+        />
       </div>
     );
   }
