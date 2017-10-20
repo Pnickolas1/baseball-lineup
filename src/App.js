@@ -3,20 +3,20 @@ import logo from './logo.svg';
 import './App.css';
 import LineupInput from './LineupInput';
 import LineupCard from './LineupCard';
-
+import shortid from 'shortid'
 
   const startingLineup = [
     {
-      "id": "peter",
+      "id": shortid.generate(),
       "name": "Peter Tountas",
       "position": "shortstop"
     },
     {
-      "id": "jose",
+      "id": shortid.generate(),
       "name": "Jose Altuve",
       "position": "second base"
     },{
-      "id": "bryce",
+      "id": shortid.generate(),
       "name": "Bryce Harper",
       "position": "Right Field"
     }
