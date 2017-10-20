@@ -15,7 +15,7 @@ class LineupCard extends Component{
             {this.props.starters.map((player) => (
               <li key={player.number} className="player-list-item">
                 <div className="player-details">
-                  <p>{player.name}</p>
+                  <p style={{fontSize: 24}}>{player.name}</p>
                   <p>{player.position}</p>
                 </div>
                 <button onClick={() => this.props.onDeletePlayer(player) } className="contact-remove">
